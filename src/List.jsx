@@ -2,12 +2,12 @@ import React from "react";
 
 function List(){
     return(
-       <h2><ol>
+       <ol>
             <li>Sumed</li>
             <li>Sumya</li>
             <li>Sumit</li>
            </ol>
-       </h2>
+    
     );
 }
 
