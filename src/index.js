@@ -2,23 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const name = "Sumed";
-const img1 ="https://picsum.photos/200/300";
-const img2 ="https://picsum.photos/250/300";
-const img3 ="https://picsum.photos/300/300";
+let curDate = new Date(2021,5,5,19);
+curDate = curDate.getHours();
+let greeting = "";
+const cssStyle = {};
 
-const links ="https://www.picsum.com";
+if (curDate >= 1 && curDate < 12){
+  greeting = "Good Morning";
+  cssStyle.color = "Green";
+}else if (curDate >= 12 && curDate < 19){
+  greeting = "Good Afternoon";
+  cssStyle.color = "Orange";
+}
+else{
+  greeting = "Good Night";
+  cssStyle.color ="Black";
+}
+
 
 ReactDOM.render(
   <>
-    <h1 className='heading'>My Name is {name}</h1>
-    <div className="img_div">
-    <img src = {img1} alt="randomImages" />
-    <img src = {img2} alt="randomImages" />
-    <a href= {links} target="_blank">
-    <img src = {img3} alt="randomImages" />
-     </a>
-     </div>
-  </>,
+   <div>
+      <h1>Hello Sir, <span style={cssStyle} > {greeting} </span></h1>
+    </div>
+ </>,
   document.getElementById("root")
 );
